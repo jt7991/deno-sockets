@@ -23,7 +23,6 @@ router.get("/chatroom", (ctx) => {
     console.log("disconnected");
   };
   ws.onmessage = (msg) => {
-    console.log();
     const htmlMessage = eta.render("message.html", {
       message: JSON.parse(msg.data).chat_message,
     });
